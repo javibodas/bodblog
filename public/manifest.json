@@ -1,0 +1,91 @@
+{
+  "short_name": "React App",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "images/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }, {
+      "src": "images/descarga-eclipse-jee.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },{
+      "src": "images/directorio-truffle-init.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/ganache-ethereum.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/ganache-home-empty.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/hello-api-heroku-spring-deployed.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/hello-api-spring-local.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/heroku-list-apps.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/import-existing-maven-project.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/launch-spring-api-local.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/mensaje-installacion-servidor-web.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+     {
+      "src": "images/spring-initialzr-default.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/spring-initialzr-filled.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/spring-plugin.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/profile.png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
