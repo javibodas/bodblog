@@ -30,7 +30,7 @@ code{
 .article-list a:not([href]){
   color: #5D6BA7;
 }
-.article-list a:not([href]), .article-mobile-list a:not([href]){
+.article-list a:not([href]){
   cursor: pointer;
   text-decoration: none;
 }
@@ -82,11 +82,8 @@ code .fa-check{
 .caret {
   cursor: pointer;
   user-select: none; /* Prevent text selection */
-  } 
-  .caret:hover {
-    color: #6a76af;
-    text-decoration: underline;
-  }
+}
+ 
 .caret::before {
   content: "\25B6";
   color: black;
