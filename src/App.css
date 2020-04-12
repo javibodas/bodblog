@@ -35,7 +35,7 @@ code{
   text-decoration: none;
 }
 
-.article-list a:not([href]):hover,.article-mobile-list a:not([href]):hover{
+.article-list a:not([href]):hover{
   color: #414b77;
   text-decoration: underline;
 }
@@ -83,7 +83,7 @@ code .fa-check{
   cursor: pointer;
   user-select: none; /* Prevent text selection */
 }
- 
+
 .caret::before {
   content: "\25B6";
   color: black;
