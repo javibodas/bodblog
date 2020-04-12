@@ -27,17 +27,14 @@ code{
     height: auto;
 }
 
-.article-list a:not([href]){
-  color: #5D6BA7;
-}
-.article-list a:not([href]){
-  cursor: pointer;
-  text-decoration: none;
+.article-list a, .article-mobile-list a{
+  cursor: pointer!important;
+  text-decoration: none!important;
 }
 
-.article-list a:not([href]):hover{
-  color: #414b77;
-  text-decoration: underline;
+.article-list a:hover, .article-mobile-list a:hover{
+  color: #414b77!important;
+  text-decoration: underline!important;
 }
 
 
