@@ -82,7 +82,11 @@ code .fa-check{
 .caret {
   cursor: pointer;
   user-select: none; /* Prevent text selection */
-}
+  } 
+  .caret:hover {
+    color: #6a76af;
+    text-decoration: underline;
+  }
 .caret::before {
   content: "\25B6";
   color: black;
