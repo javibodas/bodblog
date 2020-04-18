@@ -1,11 +1,10 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from "@fortawesome/fontawesome-svg-core";
 import { faLinkedin, faGithubAlt, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 
-function Header(){
+export default function Header(){
 	return (<header className="header text-center">
 				<nav className="navbar navbar-expand-lg navbar-dark" >
 					<React.Fragment>
@@ -45,26 +44,3 @@ function SocialList(){
 			            <li className="list-inline-item"><a href="mailto:gonzalezbodasjavier@yahoo.es"><FontAwesomeIcon icon={faEnvelope}/></a></li>
 			        </ul>);
 }
-
-/*function NavigationBar(){
-	return (<ul className="navbar-nav flex-column text-left">
-				<React.Fragment>
-					<NavigationBarItem link='/' text='Blog Home' className='fas fa-home fa-fw mr-2'/>
-					<NavigationBarItem link='/portafolio.html' text='Portafolio' className='fas fa-bookmark fa-fw mr-2'/>
-				</React.Fragment>
-			</ul>)
-}
-
-function NavigationBarItem(props){
-	if(window.location.href.endsWith(props.link)){
-		return (<li className="nav-item active">
-					    <a className="nav-link" href={props.link}><i className={props.class}></i>{props.text} <span className="sr-only">(current)</span></a>
-					</li>)
-	}else{
-		return (<li className="nav-item">
-					    <a className="nav-link" href={props.link}><i className={props.class}></i>{props.text}</a>
-					</li>)
-	}
-}*/
-
-export default Header
