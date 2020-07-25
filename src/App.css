@@ -160,7 +160,10 @@ code .fa-check{
 }
 
 /** MOBILE SETTINGS **/
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 480px) {
+  .blog-post-header .title{
+    font-size: 1.3rem !important;
+  }
   /** Deleted elements **/
   .profile-image{
     display: none;

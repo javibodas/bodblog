@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import hljs from 'highlight.js';
-import Error from '../ErrorData'
-import Loading from '../LoadingData'
+import Comment from './PostComments';
+import Error from '../ErrorData';
+import Loading from '../LoadingData';
+import getPost from '../../services/posts/getPost';
+import getHomeDefaultPost from '../../services/posts/getHomeDefaultPost';
 
 export default function Post(props){
 
@@ -10,16 +13,14 @@ export default function Post(props){
 	const [post, setPost ] = useState({});
 
 	useEffect(function (){
-		fetch('https://api-bodblog.herokuapp.com/articles/' + props.id)
-    	.then(res => res.json())
-	    .then(function(result){
-			setIsLoadedPost(true);
-			setPost(result);
-		  })
-		.catch(function(error) {
-			setIsLoadedPost(false);
-			setError(error);
-		})
+		props.id == -1 ?
+			getHomeDefaultPost()
+			.then((result) => { setIsLoadedPost(true); setPost(result);})
+			.catch((error) => { setIsLoadedPost(false); setError(error);})
+		:
+			getPost(props.id)
+			.then((result) => { setIsLoadedPost(true); setPost(result);})
+			.catch((error) => { setIsLoadedPost(false); setError(error);})
 	
 	}, [props.id]);
 

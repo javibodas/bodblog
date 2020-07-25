@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../Footer'
-import DesktopVersion from '../DesktopAppVersion'
-import MobileVersion from '../MobileAppVersion'
+import DesktopVersion from './DesktopAppVersion'
+import MobileVersion from './MobileAppVersion'
 
 export default function Main(){
 
