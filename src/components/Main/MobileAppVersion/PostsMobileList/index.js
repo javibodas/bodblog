@@ -35,5 +35,5 @@ export default function ArticleMobileList (props){
 }
 
 function PostEntry(props){
-	return(<div className="item mb-5"><div className="media"><div className="media-body"><h3 className="title mb-1"><Link href={'/post/' + props.id}>{props.title}</Link></h3><div className="meta mb-1"><span className="date">Publicado {props.publication_date}</span></div><div className="intro">{props.description}</div><a className="more-link" href={props.link}> Leer más &rarr;</a></div></div></div>);
+	return(<div className="item mb-5"><div className="media"><div className="media-body"><h3 className="title mb-1"><Link href={'/post/' + props.id}>{props.title}</Link></h3><div className="meta mb-1"><span className="date">Publicado {props.publication_date}</span></div><div className="intro">{props.description}</div><Link href={'/post/' + props.id}> Leer más &rarr;</Link></div></div></div>);
 }
