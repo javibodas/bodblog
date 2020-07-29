@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Router, Route } from 'wouter'
-import ArticleMobileList from './PostsMobileList'
-import Post from '../../Post'
+import PostsList from 'components/PostsList'
+import Post from 'components/Post'
 
 
 export default function MobileVersion(props){
@@ -18,7 +18,7 @@ export default function MobileVersion(props){
 						<div className="sections-wrapper">
 							<section className="blog-list px-3 py-5 p-md-4">
 								<div className="container article-mobile-list">
-									<ArticleMobileList />
+									<PostsList />
 								</div>
 							</section>
 						</div>

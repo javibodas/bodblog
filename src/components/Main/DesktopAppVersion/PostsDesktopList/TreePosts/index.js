@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'wouter'
-import Error from '../../../../ErrorData'
-import Loading from '../../../../LoadingData'
-import useTreePosts from '../../../../../hooks/useTreePosts';
+import Error from 'components/ErrorData'
+import Loading from 'components/LoadingData'
+import useTreePosts from 'hooks/useTreePosts';
 
 export default function TreeArticles(props){
 
@@ -38,7 +38,7 @@ export default function TreeArticles(props){
 }
 
 function Article(props){
-    return (<li onClick={() => props.handleClick(props.id)}><Link to={'/post/' + props.id}> {props.title} </Link></li>);
+    return (<li onClick={() => props.handleClick(props.id)}><Link className="article-link" to={'/post/' + props.id}> {props.title} </Link></li>);
 }
 
 function Month(props){

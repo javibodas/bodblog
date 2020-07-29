@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'wouter'
-import Error from '../../../ErrorData'
-import Loading from '../../../LoadingData'
-import getPostsListMobile from '../../../../services/posts/getPostsListMobile';
+import Error from 'components/ErrorData'
+import Loading from 'components/LoadingData'
+import getPosts from 'services/posts/getPosts';
 
-export default function ArticleMobileList (props){
+export default function PostsList (props){
 
 	const [error, setError ] = useState(null);
 	const [isLoadedList, setIsLoadedList ] = useState(false);
@@ -19,9 +19,12 @@ export default function ArticleMobileList (props){
 	}
 
 	useEffect(function(){
-		getPostsListMobile()
-		  .then((result) => { setArticles(result); setIsLoadedList(true); console.log(result); })
-		  .catch((error) => { setError(error); setIsLoadedList(true); });
+		/*props.label ?
+			console.log('Posts by label')
+		:*/
+			getPosts()
+		  	.then((result) => { setArticles(result); setIsLoadedList(true); })
+		  	.catch((error) => { setError(error); setIsLoadedList(true); });
 
 	}, []);
 

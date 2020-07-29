@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import Footer from '../Footer'
+import React, { useState, useEffect } from 'react'
+import Footer from 'components/Footer'
 import DesktopVersion from './DesktopAppVersion'
 import MobileVersion from './MobileAppVersion'
 
