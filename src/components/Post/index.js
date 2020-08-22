@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import hljs from 'highlight.js';
-import Comment from './PostComments';
+import PostComments from './PostComments';
 import Error from 'components/ErrorData';
 import Loading from 'components/LoadingData';
 import getPost from 'services/posts/getPost';
@@ -35,18 +35,36 @@ export default function Post(props){
 	}else if(!isLoadedPost){
 		return <Loading />;
 	}else{
-		return(<article className="blog-post px-3 py-5 p-md-5">
-						<div className="container">
-							 <header className="blog-post-header">
+		return(
+			<>
+				<article className="blog-post px-3 py-5 p-md-5">
+					<div className="container">
+						<header className="blog-post-header">
 						    	<h2 className="title mb-2">{post.title}</h2>
 						    	<div className="meta mb-3"><span className="date">Publicado {post.publication_time}</span></div>
 								<div className="meta mb-3">
-									{post.labels.map((label) => <span>#{label.title}</span>)}
+									{post.labels.map((label) => <span>#{label}</span>)}
 								</div>
-					    	 </header>
-				   			 <div className="blog-post-body" dangerouslySetInnerHTML={{__html: post.content}}>
-				   			 </div>
-				   		</div>
-					   </article>);
+					    </header>
+				   		<section className="blog-post-body" dangerouslySetInnerHTML={{__html: post.content}}></section>
+						<hr className='post-comment-separator'></hr>
+						<section>
+							<PostComments postid={post.id}/>
+						</section>
+				   	</div>
+				</article>
+				<style jsx>{`
+
+					.post-comment-separator{
+						border-top: 3px solid #6a76af;
+						width: 75%;
+						margin-top: 3rem;
+						padding-bottom: 1rem;
+						opacity: 0.65;
+					}
+					
+				
+				`}</style>
+			</>);
 	}	
 }

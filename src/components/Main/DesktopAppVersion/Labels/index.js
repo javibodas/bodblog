@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Error from 'components/ErrorData';
 import Loading from 'components/LoadingData';
+import Label from './Label';
 import getAllLabels from 'services/labels/getAllLabels';
 
 export default function Labels(props){
@@ -28,7 +29,7 @@ export default function Labels(props){
         return(<div className="px-3 p-md-5">
         <div className="section-inner">
             <div className="heading py-2"><h4>Etiquetas</h4></div>
-                    <div>{ labels.map((label) => <a onClick={() => props.handleClick(label.title)}>#{label.title}</a>)}</div>
+                    <div>{ labels.map((label) => <Label handleClick={props.handleClick} label={label.title} />)}</div>
         </div>
     </div>)
     }

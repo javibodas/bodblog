@@ -3,6 +3,7 @@ import { Link } from 'wouter'
 import Error from 'components/ErrorData'
 import Loading from 'components/LoadingData'
 import getPosts from 'services/posts/getPosts';
+import getPostsByLabel from 'services/posts/getPostsByLabel'
 
 export default function PostsList (props){
 
@@ -19,12 +20,14 @@ export default function PostsList (props){
 	}
 
 	useEffect(function(){
-		/*props.label ?
-			console.log('Posts by label')
-		:*/
+		props.label ?
+			getPostsByLabel(props.label)
+			.then((result) => { setArticles(result); setIsLoadedList(true); })
+		  	.catch((error) => { setError(error); setIsLoadedList(true); })
+		:
 			getPosts()
 		  	.then((result) => { setArticles(result); setIsLoadedList(true); })
-		  	.catch((error) => { setError(error); setIsLoadedList(true); });
+		  	.catch((error) => { setError(error); setIsLoadedList(true); })
 
 	}, []);
 
