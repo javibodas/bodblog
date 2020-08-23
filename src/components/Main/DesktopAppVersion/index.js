@@ -1,17 +1,33 @@
 import React, { useState } from 'react'
-import Post from '../../Post'
+import { Router, Route } from 'wouter'
+import Post from 'components/Post'
 import ArticlesDesktopList from './PostsDesktopList'
+import PostsList from 'components/PostsList'
 
 export default function DesktopVersion(props){
 
-	const [ defaultPostId, setDefaultPostId ] = useState(-1);
-
-	const handleClickTreePost = function(id){
-		setDefaultPostId(id)
-	}
-
-	return(<div className="row desktop">
-					<div className="col-lg-9 col-12"><Post id={defaultPostId}/></div>
-					<div className="col-lg-3 col-12 right-bar"><ArticlesDesktopList handleClickPost={handleClickTreePost}/></div>
-			</div>);
+	return(<Router>
+				<Route path='/'>
+					<div className="row desktop">
+						<div className="col-lg-9 col-12">
+							<Post id={''}/>
+						</div>
+						<div className="col-lg-3 col-12 right-bar">
+							<ArticlesDesktopList />
+						</div>
+					</div>
+				</Route>
+				<Route path='/post/:id'>
+					{params => 
+						<div className="row desktop">
+							<div className="col-lg-9 col-12">
+								<Post id={params.id}/>
+							</div>
+							<div className="col-lg-3 col-12 right-bar">
+								<ArticlesDesktopList />
+							</div>
+						</div>
+					}
+				</Route>
+			</Router>);
 }

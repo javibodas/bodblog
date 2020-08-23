@@ -13,7 +13,7 @@ export default function Post(props){
 	const [post, setPost ] = useState({});
 
 	useEffect(function (){
-		if(props.id == -1){
+		if(props.id == ''){
 			getHomeDefaultPost()
 			.then((result) => { setPost(result); setIsLoadedPost(true);})
 			.catch((error) => { setError(error); setIsLoadedPost(false);})
@@ -43,7 +43,7 @@ export default function Post(props){
 						    	<h2 className="title mb-2">{post.title}</h2>
 						    	<div className="meta mb-3"><span className="date">Publicado {post.publication_time}</span></div>
 								<div className="meta mb-3">
-									{post.labels.map((label) => <span className='post-label'>#{label}</span>)}
+									{post.labels.map((label) => <span>#{label}</span>)}
 								</div>
 					    </header>
 				   		<section className="blog-post-body" dangerouslySetInnerHTML={{__html: post.content}}></section>
@@ -54,10 +54,6 @@ export default function Post(props){
 				   	</div>
 				</article>
 				<style jsx>{`
-
-					.post-label{
-						padding: 0 0.2rem 0 0.2rem;
-					}
 
 					.post-comment-separator{
 						border-top: 3px solid #6a76af;

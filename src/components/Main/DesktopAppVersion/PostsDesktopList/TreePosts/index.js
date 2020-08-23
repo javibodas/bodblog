@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'wouter'
-import Error from '../../../../ErrorData'
-import Loading from '../../../../LoadingData'
-import useTreePosts from '../../../../../hooks/useTreePosts';
+import Error from 'components/ErrorData'
+import Loading from 'components/LoadingData'
+import useTreePosts from 'hooks/useTreePosts';
 
 export default function TreeArticles(props){
 
@@ -17,7 +17,7 @@ export default function TreeArticles(props){
       year.months.map((month) => {
         const articles_html = [];
         
-        month.articles.map((article) => { articles_html.push(<Article id={article.id} link={article.link} title={article.title} handleClick={props.handleClickPost}/>) })
+        month.articles.map((article) => { articles_html.push(<Article id={article.shortTitle} link={article.link} title={article.title} />) })
         
         months_html.push(<Month month={month.month} artics={articles_html} active={month.active}/>);
       
@@ -38,7 +38,7 @@ export default function TreeArticles(props){
 }
 
 function Article(props){
-    return (<li onClick={() => props.handleClick(props.id)}><Link to={'/post/' + props.id}> {props.title} </Link></li>);
+    return (<li><Link className="article-link" to={'/post/' + props.id}> {props.title} </Link></li>);
 }
 
 function Month(props){
