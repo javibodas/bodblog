@@ -14,7 +14,7 @@ export default function PostsList (props){
 	const createList = function() {
 		const list = [];
 	
-		articles.map((article) => {list.push(<PostEntry title={article.title} publication_date={article.publication_time} description={article.description} id={article.id}/>)})
+		articles.map((article) => {list.push(<PostEntry title={article.title} publication_date={article.publication_time} description={article.description} id={article.shortTitle}/>)})
 		
 		return list;
 	}

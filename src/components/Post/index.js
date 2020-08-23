@@ -13,7 +13,7 @@ export default function Post(props){
 	const [post, setPost ] = useState({});
 
 	useEffect(function (){
-		if(props.id == -1){
+		if(props.id == ''){
 			getHomeDefaultPost()
 			.then((result) => { setPost(result); setIsLoadedPost(true);})
 			.catch((error) => { setError(error); setIsLoadedPost(false);})

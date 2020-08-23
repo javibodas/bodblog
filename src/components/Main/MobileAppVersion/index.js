@@ -6,12 +6,6 @@ import Post from 'components/Post'
 
 export default function MobileVersion(props){
 
-	const [ postId , setPostId ] = useState(0)
-
-	useEffect(function(){
-
-	});
-
 	return(<Router>
 				<Route path="/">
 					<div className="mobile">

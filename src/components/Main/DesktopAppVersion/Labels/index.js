@@ -17,10 +17,6 @@ export default function Labels(props){
 
     }, [])
 
-    const handleClickLabel = () => {
-        console.log('Link')
-    }
-
     if(error){
 		return <Error />;
 	}else if(!isLoadedLabels){
@@ -29,7 +25,7 @@ export default function Labels(props){
         return(<div className="px-3 p-md-5">
         <div className="section-inner">
             <div className="heading py-2"><h4>Etiquetas</h4></div>
-                    <div>{ labels.map((label) => <Label handleClick={props.handleClick} label={label.title} />)}</div>
+                    <div>{ labels.map((label) => <Label label={label.title} />)}</div>
         </div>
     </div>)
     }

@@ -1,14 +1,14 @@
 import React from 'react';
+import { Link } from 'wouter'
 import styled from 'styled-components'
 
 const LabelStyled = styled.a`
-    cursor: pointer;
-
     :hover{
         color: blue;
+        cursor: pointer;
     }
 `
 
 export default function Label(props){
-    return (<LabelStyled onClick={() => props.handleClick(props.label)}>#{props.label}</LabelStyled>)
+    return (<LabelStyled><Link to={'/label/' + props.label}>#{props.label}</Link></LabelStyled>)
 }
