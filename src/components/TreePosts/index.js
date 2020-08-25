@@ -4,7 +4,7 @@ import Error from 'components/ErrorData'
 import Loading from 'components/LoadingData'
 import useTreePosts from 'hooks/useTreePosts';
 
-export default function TreeArticles(props){
+export default function TreePosts(props){
 
   const { error, loading, posts } = useTreePosts();
 
@@ -33,7 +33,12 @@ export default function TreeArticles(props){
   } else if (!loading) {
     return <Loading />;
   }else{
-    return (<ul className="article-list">{createList()}</ul>);
+    return (<div className="px-3 p-md-5">
+              <div className="section-inner">
+                <div className="heading py-2"><h4>Articulos</h4></div>
+                <ul className="article-list">{createList()}</ul>
+              </div>
+            </div>);
   }
 }
 

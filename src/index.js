@@ -2,14 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
 import './theme.css';
 import 'highlight.js/styles/agate.css';
 
-import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import App from './components/App';
+import App from './App';
 
 import * as serviceWorker from './serviceWorker';
 

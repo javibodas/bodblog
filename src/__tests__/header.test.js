@@ -1,4 +1,4 @@
-import Header from '../header'
+import Header from '../components/header'
 import React from 'react';
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'

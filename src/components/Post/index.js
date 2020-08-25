@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import hljs from 'highlight.js';
-import PostComments from './PostComments';
+import PostComments from 'components/PostComments';
 import Error from 'components/ErrorData';
 import Loading from 'components/LoadingData';
 import getPost from 'services/posts/getPost';

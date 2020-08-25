@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Error from 'components/ErrorData';
 import Loading from 'components/LoadingData';
-import Label from './Label';
+import Label from 'components/Label';
 import getAllLabels from 'services/labels/getAllLabels';
 
 export default function Labels(props){

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Comment from 'components/Post/Comment'
+import Comment from 'components/PostComment'
 import getPostComments from 'services/comments/getPostComments';
 import addPostComment from 'services/comments/addPostComment';
 import useComments from 'hooks/useComments';
