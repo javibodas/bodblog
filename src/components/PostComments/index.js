@@ -48,8 +48,7 @@ export default function PostComments(props){
                     <button className='btn btn-primary' onClick={clickSendComment}>Enviar</button>
                 </form>
                 <div className='list-comments'>    
-                    { comments.map((comment) => <Comment name={comment.username} date={comment.publicationDate} text={comment.comment}/>)
-                    }
+                    { comments.map((comment) => <Comment name={comment.username} date={comment.publicationDate} text={comment.comment}/>) }
                 </div>
             </section>
             <style jsx>{`

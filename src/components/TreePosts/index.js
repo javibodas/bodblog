@@ -17,12 +17,12 @@ export default function TreePosts(props){
       year.months.map((month) => {
         const articles_html = [];
         
-        month.articles.map((article) => { articles_html.push(<Article id={article.shortTitle} link={article.link} title={article.title} />) })
+        month.articles.map((article) => { articles_html.push(<Article id={article.shortTitle} link={article.link} title={article.title} key={article.id}/>) })
         
-        months_html.push(<Month month={month.month} artics={articles_html} active={month.active}/>);
+        months_html.push(<Month month={month.month} artics={articles_html} active={month.active} key={month.month}/>);
       
       })
-      list.push(<Year year={year.year} months={months_html} active={year.active}/>);
+      list.push(<Year year={year.year} months={months_html} active={year.active} key={year.year}/>);
     })
 
     return list;
@@ -47,11 +47,11 @@ function Article(props){
 }
 
 function Month(props){
-  return(<li><SpanClickable open={props.active} text={props.month} elements={props.artics}/></li>); 
+  return(<li><SpanClickable open={props.active} text={props.month} elements={props.artics} /></li>); 
 }
 
 function Year(props){
-  return(<li><SpanClickable open={props.active} text={props.year} elements={props.months}/></li>);
+  return(<li><SpanClickable open={props.active} text={props.year} elements={props.months} /></li>);
 }
 
 function SpanClickable(props){

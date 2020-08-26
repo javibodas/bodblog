@@ -22,11 +22,24 @@ export default function Labels(props){
 	}else if(!isLoadedLabels){
 		return <Loading />;
 	}else{
-        return(<div className="px-3 p-md-5">
-        <div className="section-inner">
-            <div className="heading py-2"><h4>Etiquetas</h4></div>
-                    <div>{ labels.map((label) => <Label label={label.title} />)}</div>
-        </div>
-    </div>)
+        return(<>
+                    <div className="px-3 p-md-5">
+                        <div className="section-inner">
+                            <div className="heading py-2"><h4>Etiquetas</h4></div>
+                            <div className='labels-list'>{ labels.map((label) => <Label label={label.title} key={label.id}/>)}</div>
+                        </div>
+                    </div>
+                    <style jsx>{`
+                        .labels-list{
+                            display: grid;
+                            grid-template-columns: repeat(4, 1fr);
+                            grid-auto-rows: minmax(10px, auto);
+                            width: 100%;
+                        }
+                        .labels-list > a {
+                            padding: 0 0.3rem 0 0.3rem;
+                        }
+                    `}</style>
+            </>)
     }
 }

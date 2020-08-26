@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Router, Route } from 'wouter'
+import { Helmet } from 'react-helmet';
 import TreePosts from 'components/TreePosts'
 import Labels from 'components/Labels';
 import PostsList from 'components/PostsList'
@@ -8,49 +9,56 @@ import Post from 'components/Post'
 export default function DesktopVersion(props){
 
 	return(<Router>
-				<Route path='/'>
-					<div className="row desktop">
-						<div className="col-lg-9 col-12">
-							<Post id={''}/>
-						</div>
-						<div className="col-lg-3 col-12 right-bar">
-							<TreePosts />
-							<Labels />
-						</div>
-					</div>
-				</Route>
-				<Route path='/post/:id'>
-					{params => 
-						<div className="row desktop">
-							<div className="col-lg-9 col-12">
-								<Post id={params.id}/>
-							</div>
-							<div className="col-lg-3 col-12 right-bar">
-								<TreePosts />
-								<Labels />
-							</div>
-						</div>
-					}
-				</Route>
-				<Route path='/label/:id'>
-					{params => 
-						<div className="row desktop">
-							<div className="col-lg-9 col-12">
-										<div className="sections-wrapper">
-											<h3>#{params.id}</h3>
+				<div className="row desktop">
+					<div className="col-lg-9 col-12">
+						<Route path='/'>
+							<>
+								<Helmet>
+									<title> Home | BoDDev </title>
+									<meta name='description' content='Prueba description' />
+								</Helmet>
+								<Post id={''}/>
+							</>
+						</Route>
+						<Route path='/post/:id'>
+							{params => 
+								<>
+									<Helmet>
+										<title> {params.id} | BoDDev </title>
+										<meta name='description' content='Prueba description' />
+									</Helmet>
+									<Post id={params.id}/>
+								</>
+							}
+						</Route>
+						<Route path='/label/:id'>
+							{params => 
+								<>
+									<Helmet>
+										<title> Posts de {params.id} | BoDDev </title>
+										<meta name='description' content='Prueba description' />
+									</Helmet>
+									<div className="sections-wrapper">
+											<section className='label-title px-3 py-5 p-md-4'><h3>#{params.id}</h3></section>
 											<section className="blog-list px-3 py-5 p-md-4">
 												<div className="container article-mobile-list">
 													<PostsList label={params.id} />
 												</div>
 											</section>
-										</div>
-							</div>
-							<div className="col-lg-3 col-12 right-bar">
-								<TreePosts />
-								<Labels />
-							</div>
-						</div>
-					}
-				</Route>
+									</div>
+									<style jsx>{`
+										.label-title{
+											font-family: Courier New;
+										}
+									`}</style>
+								</>
+							}
+						</Route>
+					</div>
+					<div className="col-lg-3 col-12 right-bar">
+						<TreePosts />
+						<Labels />
+					</div>
+				</div>
 			</Router>);
 }
