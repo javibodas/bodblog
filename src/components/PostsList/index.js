@@ -3,10 +3,8 @@ import { Link } from 'wouter'
 import Error from 'components/ErrorData'
 import Loading from 'components/LoadingData'
 import getPosts from 'services/posts/getPosts';
-<<<<<<< HEAD:src/components/PostsList/index.js
-=======
 import getPostsByLabel from 'services/posts/getPostsByLabel'
->>>>>>> development:src/components/PostsList/index.js
+
 
 export default function PostsList (props){
 
@@ -16,26 +14,16 @@ export default function PostsList (props){
 
 	const createList = function() {
 		const list = [];
-	
-<<<<<<< HEAD:src/components/PostsList/index.js
-		articles.map((article) => {list.push(<PostEntry title={article.title} publication_date={article.publication_time} description={article.description} id={article.shortTitle}/>)})
-=======
 		articles.map((article) => {list.push(<PostEntry title={article.title} publication_date={article.publication_time} description={article.description} id={article.shortTitle} key={article.id}/>)})
->>>>>>> development:src/components/PostsList/index.js
-		
 		return list;
 	}
 
 	useEffect(function(){
-<<<<<<< HEAD:src/components/PostsList/index.js
-		
-=======
 		props.label ?
 			getPostsByLabel(props.label)
 			.then((result) => { setArticles(result); setIsLoadedList(true); })
 		  	.catch((error) => { setError(error); setIsLoadedList(true); })
 		:
->>>>>>> development:src/components/PostsList/index.js
 			getPosts()
 		  	.then((result) => { setArticles(result); setIsLoadedList(true); })
 		  	.catch((error) => { setError(error); setIsLoadedList(true); })
