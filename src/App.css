@@ -98,6 +98,9 @@ code .fa-check{
 .active {
   display: block;
 }
+.article-link{
+  font-size: 15px;
+}
 
 /**************/
 /** IDENTIFIERS **/

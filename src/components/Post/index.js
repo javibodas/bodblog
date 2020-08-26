@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import hljs from 'highlight.js';
+<<<<<<< HEAD
 import PostComments from './PostComments';
+=======
+import PostComments from 'components/PostComments';
+>>>>>>> development
 import Error from 'components/ErrorData';
 import Loading from 'components/LoadingData';
 import getPost from 'services/posts/getPost';
@@ -43,7 +47,11 @@ export default function Post(props){
 						    	<h2 className="title mb-2">{post.title}</h2>
 						    	<div className="meta mb-3"><span className="date">Publicado {post.publication_time}</span></div>
 								<div className="meta mb-3">
+<<<<<<< HEAD
 									{post.labels.map((label) => <span>#{label}</span>)}
+=======
+									{post.labels.map((label) => <span key={label}>#{label}</span>)}
+>>>>>>> development
 								</div>
 					    </header>
 				   		<section className="blog-post-body" dangerouslySetInnerHTML={{__html: post.content}}></section>

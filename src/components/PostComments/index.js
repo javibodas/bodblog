@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Comment from 'components/Post/Comment'
+import Comment from 'components/PostComment'
 import getPostComments from 'services/comments/getPostComments';
 import addPostComment from 'services/comments/addPostComment';
 import useComments from 'hooks/useComments';
@@ -48,8 +48,7 @@ export default function PostComments(props){
                     <button className='btn btn-primary' onClick={clickSendComment}>Enviar</button>
                 </form>
                 <div className='list-comments'>    
-                    { comments.map((comment) => <Comment name={comment.username} date={comment.publicationDate} text={comment.comment}/>)
-                    }
+                    { comments.map((comment) => <Comment name={comment.username} date={comment.publicationDate} text={comment.comment}/>) }
                 </div>
             </section>
             <style jsx>{`
