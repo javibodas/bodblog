@@ -38,9 +38,9 @@ function BlogDescription(){
 
 function SocialList(){
 	return (<ul className="social-list list-inline py-3 mx-auto">
-			            <li className="list-inline-item"><a href="https://twitter.com/BodasJavier"><FontAwesomeIcon icon={faTwitter}/></a></li>
-			            <li className="list-inline-item"><a href="https://www.linkedin.com/in/javier-gonz%C3%A1lez-bodas-70a59787/"><FontAwesomeIcon icon={faLinkedin}/></a></li>
-			            <li className="list-inline-item"><a href="https://github.com/javibodas"><FontAwesomeIcon icon={faGithubAlt}/></a></li>
-			            <li className="list-inline-item"><a href="mailto:gonzalezbodasjavier@yahoo.es"><FontAwesomeIcon icon={faEnvelope}/></a></li>
+			            <li className="list-inline-item"><a data-testid="twitter-link" href="https://twitter.com/BodasJavier"><FontAwesomeIcon icon={faTwitter}/></a></li>
+			            <li className="list-inline-item"><a data-testid="linkedin-link" href="https://www.linkedin.com/in/javier-gonz%C3%A1lez-bodas-70a59787/"><FontAwesomeIcon icon={faLinkedin}/></a></li>
+			            <li className="list-inline-item"><a data-testid="github-link" href="https://github.com/javibodas"><FontAwesomeIcon icon={faGithubAlt}/></a></li>
+			            <li className="list-inline-item"><a data-testid="mail-link" href="mailto:gonzalezbodasjavier@yahoo.es"><FontAwesomeIcon icon={faEnvelope}/></a></li>
 			        </ul>);
 }
