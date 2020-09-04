@@ -70,7 +70,7 @@ export default function ProfileLogo(){
 
 				@media screen and (max-width: 992px) {
 					.profile-logo text{
-						font-size: 14px;
+						font-size: 13px;
 					}
 
 					.profile-logo polygon{
