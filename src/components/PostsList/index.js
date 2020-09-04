@@ -41,5 +41,55 @@ export default function PostsList (props){
 }
 
 function PostEntry(props){
-	return(<div className="item mb-5"><div className="media"><div className="media-body"><h3 className="title mb-1"><Link href={'/post/' + props.id}>{props.title}</Link></h3><div className="meta mb-1"><span className="date">Publicado {props.publication_date}</span></div><div className="intro">{props.description}</div><Link href={'/post/' + props.id}> Leer más &rarr;</Link></div></div></div>);
+	return(<>
+				<div className="item mb-5">
+					<div className="media">
+						<div className="post-list">
+							<Link href={'/post/' + props.id}>
+								<h3 className="post-list-title mb-1">{props.title}</h3>
+								<div className="post-list-date mb-1"><span className="date">Publicado {props.publication_date}</span></div>
+								<div className="post-list-description">{props.description}</div>
+							</Link>
+						</div>
+					</div>
+				</div>
+				<style jsx>{`
+					.post-list{
+						padding: 0.75rem;
+					}
+					.post-list:hover, .post-list:active{
+						background-color: #F5F5F5;
+						border-radius: 10px;
+					}
+					.post-list:hover a{
+						text-decoration: none;
+					}
+					.post-list:hover .post-list-title{
+						color: var(--links-color);
+					}
+
+					.post-list-title{
+						color: var(--title-color);
+					}
+
+					.post-list-description{
+						color: black;
+					}
+
+					@media screen and (max-width: 992px) {
+						.post-list-title{
+							font-size: 18px;
+						}
+	
+						.post-list-description{
+							font-size: 13px;
+						}
+					}
+
+					.post-list-date{
+						color:#8f8f8f;
+						font-size:0.8125rem
+					}
+				`}</style>
+			</>);
 }

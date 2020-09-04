@@ -72,7 +72,13 @@ export default function PostComments(props){
                 
                 .form-add-comment > button{
                    width: 100px;
+                   background-color: var(--main-color)
                 }
+
+                .form-add-comment > button:hover{
+                    width: 100px;
+                    background-color: var(--main-dark-color)
+                 }
                 
                 @media screen and (min-width: 480px) {
                     .form-add-comment textarea{

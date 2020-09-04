@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Router, Route } from 'wouter'
 import { Helmet } from 'react-helmet';
+import Header from 'components/Header';
 import TreePosts from 'components/TreePosts'
 import Labels from 'components/Labels';
 import PostsList from 'components/PostsList'
@@ -10,7 +11,10 @@ export default function DesktopVersion(props){
 
 	return(<Router>
 				<div className="row desktop">
-					<div className="col-lg-9 col-12">
+					<div className="col-lg-2 col-12">
+						<Header />
+					</div>
+					<div className="col-lg-7 col-12">
 						<Route path='/'>
 							<>
 								<Helmet>
@@ -40,7 +44,7 @@ export default function DesktopVersion(props){
 									</Helmet>
 									<div className="sections-wrapper">
 											<section className='label-title px-3 py-5 p-md-4'><h3>#{params.id}</h3></section>
-											<section className="blog-list px-3 py-5 p-md-4">
+											<section className="blog-list px-1 py-5 p-md-4">
 												<div className="container article-mobile-list">
 													<PostsList label={params.id} />
 												</div>
@@ -49,6 +53,7 @@ export default function DesktopVersion(props){
 									<style jsx>{`
 										.label-title{
 											font-family: Courier New;
+											color: var(--social-color);
 										}
 									`}</style>
 								</>

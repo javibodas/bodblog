@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './theme.css';
+//import './theme.css';
 import 'highlight.js/styles/agate.css';
 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
