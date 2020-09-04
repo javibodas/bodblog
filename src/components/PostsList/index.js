@@ -43,13 +43,13 @@ function PostEntry(props){
 	return(<>
 				<div className="item mb-5">
 					<div className="media">
-						<div className="post-list">
-							<Link href={'/post/' + props.id}>
-								<h3 className="post-list-title mb-1">{props.title}</h3>
-								<div className="post-list-date mb-1"><span className="date">Publicado {props.publication_date}</span></div>
-								<div className="post-list-description">{props.description}</div>
-							</Link>
-						</div>
+						<Link href={'/post/' + props.id}>
+							<div className="post-list">
+									<h3 className="post-list-title mb-1">{props.title}</h3>
+									<div className="post-list-date mb-1"><span className="date">Publicado {props.publication_date}</span></div>
+									<div className="post-list-description">{props.description}</div>
+							</div>
+						</Link>
 					</div>
 				</div>
 				<style jsx>{`
