@@ -9,7 +9,7 @@ export default function ColorModeChanger(){
 	const handleChangeMode = function(){
         const mainElement = document.querySelectorAll('.main-wrapper')[0];
 
-        if(mode == modes[0]){
+        if(mode === modes[0]){
             mainElement.classList.add(modes[1]);
             setMode(modes[1]);
         }else{

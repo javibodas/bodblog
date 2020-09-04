@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'wouter'
 import Error from 'components/ErrorData'
 import Loading from 'components/LoadingData'

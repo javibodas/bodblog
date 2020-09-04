@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Router, Route } from 'wouter'
 import { Helmet } from 'react-helmet';
 import Header from 'components/Header';

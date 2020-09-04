@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import DeviceContext from 'context/deviceContext';
-import Header from 'components/Header'
 import Footer from 'components/Footer'
 import DesktopVersion from 'pages/DesktopAppVersion'
 import MobileVersion from 'pages/MobileAppVersion'

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Comment from 'components/PostComment'
-import getPostComments from 'services/comments/getPostComments';
 import addPostComment from 'services/comments/addPostComment';
 import useComments from 'hooks/useComments';
 
@@ -15,13 +14,13 @@ export default function PostComments(props){
         const text = document.querySelectorAll('#form-text-comment')[0].value
         let valid = true
 
-        if(!user || user.trim() == ''){  
+        if(!user || user.trim() === ''){  
             document.querySelectorAll('#form-username-comment')[0].classList.add('is-invalid')
             valid = false
         }else{
             document.querySelectorAll('#form-username-comment')[0].classList.remove('is-invalid')
         }
-        if(!text || text.trim() == ''){
+        if(!text || text.trim() === ''){
             document.querySelectorAll('#form-text-comment')[0].classList.add('is-invalid')
             valid = false
         }else{

@@ -14,9 +14,9 @@ export default function Post(props){
 	const [post, setPost ] = useState({});
 
 	useEffect(function (){
-		if(props.id == ''){
+		if(props.id === ''){
 			getHomeDefaultPost()
-			.then((result) => { console.log(result); setPost(result); setIsLoadedPost(true);})
+			.then((result) => { setPost(result); setIsLoadedPost(true);})
 			.catch((error) => { setError(error); setIsLoadedPost(false);})
 		}else{
 			getPost(props.id)
