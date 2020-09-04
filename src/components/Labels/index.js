@@ -19,14 +19,12 @@ export default function Labels(props){
 
     if(error){
 		return <Error />;
-	}else if(!isLoadedLabels){
-		return <Loading />;
 	}else{
         return(<>
                     <div className="px-3 p-md-5">
                         <div className="section-inner">
                             <div className="heading py-2"><h4>Etiquetas</h4></div>
-                            <div className='labels-list'>{ labels.map((label) => <Label label={label.title} key={label.id}/>)}</div>
+                            {!isLoadedLabels ? <Loading /> : <div className='labels-list'>{ labels.map((label) => <Label label={label.title} key={label.id}/>)}</div>}
                         </div>
                     </div>
                     <style jsx>{`
@@ -38,6 +36,9 @@ export default function Labels(props){
                         }
                         .labels-list > a {
                             padding: 0 0.3rem 0 0.3rem;
+                        }
+                        .labels-list > a:hover {
+                            color: var(--links-hover-color)
                         }
                     `}</style>
             </>)

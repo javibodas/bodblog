@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'wouter'
 import Error from 'components/ErrorData'
 import Loading from 'components/LoadingData'
+import SpanClickable from 'components/SpanClickable';
 import useTreePosts from 'hooks/useTreePosts';
 
 export default function TreePosts(props){
@@ -30,59 +31,35 @@ export default function TreePosts(props){
 
   if (error) {
     return <Error />;
-  } else if (!loading) {
-    return <Loading />;
-  }else{
+  } else{
     return (<div className="px-3 p-md-5">
               <div className="section-inner">
                 <div className="heading py-2"><h4>Articulos</h4></div>
-                <ul className="article-list">{createList()}</ul>
+                {!loading ? <Loading /> : <ul className="article-list">{createList()}</ul>}
               </div>
             </div>);
   }
 }
 
 function Article(props){
-    return (<li><Link className="article-link" to={'/post/' + props.id}> {props.title} </Link></li>);
+    return (<><li><Link className="article-link" to={'/post/' + props.id}> {props.title} </Link></li>
+            <style jsx>{`
+              .article-link{
+                font-size: 11px;
+                font-family: Courier New;
+                color: black;
+              }
+              .article-link:hover{
+                color: var(--links-hover-color);
+              }
+            `}</style>
+          </>);
 }
 
 function Month(props){
-  return(<li><SpanClickable open={props.active} text={props.month} elements={props.artics} /></li>); 
+  return(<li><SpanClickable open={props.active} text={props.month} elements={props.artics} /></li> ); 
 }
 
 function Year(props){
   return(<li><SpanClickable open={props.active} text={props.year} elements={props.months} /></li>);
-}
-
-function SpanClickable(props){
-
-  const [ isOpen, setIsOpen ] = useState(0);
-  const [ spanClass, setSpanClass ] = useState('');
-  const [ ulClass , setUlClass ] = useState('');
-
-  const handleClick = function(){
-    if(isOpen){
-      setIsOpen(0);
-      setSpanClass('caret year-articles');
-      setUlClass('nested'); 
-    }else{
-      setIsOpen(1)
-      setSpanClass('caret year-articles caret-down');
-      setUlClass('nested active');
-    }
-  }
-
-  useEffect(function(){
-    if(props.open){ 
-      setIsOpen(1)
-      setSpanClass('caret year-articles caret-down');
-      setUlClass('nested active');
-    }else{
-      setIsOpen(0);
-      setSpanClass('caret year-articles');
-      setUlClass('nested');
-    }
-  }, []);
-
-  return (<React.Fragment><span className={spanClass} onClick={handleClick}>{props.text}</span><ul className={ulClass}>{props.elements}</ul></React.Fragment>);
 }
