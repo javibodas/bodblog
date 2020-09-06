@@ -6,6 +6,7 @@ import TreePosts from 'components/TreePosts'
 import Labels from 'components/Labels';
 import PostsList from 'components/PostsList'
 import Post from 'components/Post'
+import Error from 'components/ErrorData';
 
 export default function DesktopVersion(props){
 
@@ -18,8 +19,9 @@ export default function DesktopVersion(props){
 						<Route path='/'>
 							<>
 								<Helmet>
-									<title> Home | BoDDev </title>
-									<meta name='description' content='Prueba description' />
+									<title> Home | JaBoDeV </title>
+									<meta property='og:description' content='Home page of JaBoDev blog' />
+									<meta name="author" content="Javier Gonzalez" />
 								</Helmet>
 								<Post id={''}/>
 							</>
@@ -28,8 +30,9 @@ export default function DesktopVersion(props){
 							{params => 
 								<>
 									<Helmet>
-										<title> {params.id} | BoDDev </title>
-										<meta name='description' content='Prueba description' />
+										<title> {params.id} | JaBoDeV </title>
+										<meta property='og:description' content={params.id}  />
+										<meta name="author" content="Javier Gonzalez" />
 									</Helmet>
 									<Post id={params.id}/>
 								</>
@@ -39,8 +42,8 @@ export default function DesktopVersion(props){
 							{params => 
 								<>
 									<Helmet>
-										<title> Posts de {params.id} | BoDDev </title>
-										<meta name='description' content='Prueba description' />
+										<title> Posts de {params.id} | JaBoDeV </title>
+										<meta property='og:description' content={'Posts of label ' + params.id + ' in JaBoDev blog.'} />
 									</Helmet>
 									<div className="sections-wrapper">
 											<section className='label-title px-3 py-5 p-md-4'><h3>#{params.id}</h3></section>
@@ -58,6 +61,9 @@ export default function DesktopVersion(props){
 									`}</style>
 								</>
 							}
+						</Route>
+						<Route path='/error'>
+							<Error />
 						</Route>
 					</div>
 					<div className="col-lg-3 col-12 right-bar">
