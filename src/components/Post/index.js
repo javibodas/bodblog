@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Redirect } from 'wouter';
 import hljs from 'highlight.js';
 import Label from 'components/Label';
 import PostComments from 'components/PostComments';
@@ -32,7 +33,7 @@ export default function Post(props){
 	}, [post])
 
 	if(error){
-		return <Error />;
+		return <Redirect to="/error" />;
 	}else if(!isLoadedPost){
 		return (<article className="blog-post px-3 py-5 p-md-5">
 					<div className="container"><Loading /></div>
