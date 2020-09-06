@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Header from 'components/Header';
 import PostsList from 'components/PostsList'
 import Post from 'components/Post'
+import Error from 'components/ErrorData';
 
 
 export default function MobileVersion(props){
@@ -12,7 +13,9 @@ export default function MobileVersion(props){
 				<Route path="/">
 					<>
 						<Helmet>
-							<title> Home | BoDDev </title>
+							<title> Home | JaBoDeV </title>
+							<meta property='og:description' content='Home page of JaBoDev blog' />
+							<meta name="author" content="Javier Gonzalez" />
 						</Helmet>
 						<Header />
 						<div className="mobile">
@@ -38,11 +41,41 @@ export default function MobileVersion(props){
 						`}</style>
 					</>
 				</Route>
+				<Route path='/label/:id'>
+							{params => 
+								<>
+									<Helmet>
+										<title> Posts de {params.id} | JaBoDeV </title>
+										<meta property='og:description' content={'Posts of label ' + params.id + ' in JaBoDev blog.'} />
+										<meta name="author" content="Javier Gonzalez" />
+									</Helmet>
+									<Header />
+									<div className="mobile">
+										<div className="sections-wrapper">
+										<section className='label-title px-3 py-5 p-md-4'><h3>#{params.id}</h3></section>
+											<section className="blog-list px-1 py-5">
+												<div className="container article-mobile-list">
+													<PostsList />
+												</div>
+											</section>
+										</div>
+									</div>
+									<style jsx>{`
+										.label-title{
+											font-family: Courier New;
+											color: var(--social-color);
+										}
+									`}</style>
+								</>
+							}
+				</Route>
 				<Route path="/post/:id">
 					{params => 
 						<>
 							<Helmet>
-								<title> {params.id} | BoDDev </title>
+								<title> {params.id} | JaBoDeV </title>
+								<meta property='og:description' content={'Posts of label ' + params.id + ' in JaBoDev blog.'} />
+								<meta name="author" content="Javier Gonzalez" />
 							</Helmet>
 							<Header />
 							<div className="row desktop">
@@ -50,6 +83,9 @@ export default function MobileVersion(props){
 							</div>
 						</>
 					}
+				</Route>
+				<Route path='/error'>
+					<Error />
 				</Route>
 			</Router>);
 }
