@@ -34,4 +34,3 @@ jobs:
         email: ${{secrets.HEROKU_EMAIL}}
         app_name: ${{secrets.HEROKU_APP_NAME_BODBLOG}}
         branch: "master"
-        subfolder: "build"
