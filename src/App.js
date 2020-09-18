@@ -1,6 +1,6 @@
 import React from 'react';
 import Main from 'pages/Main'
-import { DeviceContextProvider} from 'context/deviceContext';
+import { DeviceContextProvider } from 'context/deviceContext';
 import './App.css';
 
 
