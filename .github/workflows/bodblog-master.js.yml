@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -27,4 +27,11 @@ jobs:
     - run: npm ci
     - run: CI= npm run build --if-present
     - run: npm test
-    - run: git push heroku master
+    - name: Publish to Heroku
+      uses: onekiloparsec/heroku-node-deploy-subfolder@v1.0.4
+      with:
+        api_key: ${{secrets.HEROKU_API_KEY}}
+        email: ${{secrets.HEROKU_EMAIL}}
+        app_name: ${{secrets.HEROKU_APP_NAME_BODBLOG}}
+        branch: "master"
+        subfolder: "dist-prod"

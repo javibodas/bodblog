@@ -12,7 +12,7 @@ export default function SocialList(){
 			        <li className="list-inline-item"><a data-testid="linkedin-link" href="https://www.linkedin.com/in/javier-gonz%C3%A1lez-bodas-70a59787/"><FontAwesomeIcon icon={faLinkedin} size={SIZE}/></a></li>
 			        <li className="list-inline-item"><a data-testid="github-link" href="https://github.com/javibodas"><FontAwesomeIcon icon={faGithubAlt} size={SIZE}/></a></li>
 			        <li className="list-inline-item"><a data-testid="mail-link" href="mailto:gonzalezbodasjavier@yahoo.es"><FontAwesomeIcon icon={faEnvelope} size={SIZE}/></a></li>
-			    </ul>
+				</ul>
 				<style jsx>{`
 					.social-list{
 						font-size: 1.1rem;

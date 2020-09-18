@@ -6,7 +6,6 @@ import TreePosts from 'components/TreePosts'
 import Labels from 'components/Labels';
 import PostsList from 'components/PostsList'
 import Post from 'components/Post'
-import Error from 'components/ErrorData';
 
 export default function DesktopVersion(props){
 
@@ -61,9 +60,6 @@ export default function DesktopVersion(props){
 									`}</style>
 								</>
 							}
-						</Route>
-						<Route path='/error'>
-							<Error />
 						</Route>
 					</div>
 					<div className="col-lg-3 col-12 right-bar">

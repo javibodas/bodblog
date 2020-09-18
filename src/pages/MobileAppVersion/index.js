@@ -52,7 +52,7 @@ export default function MobileVersion(props){
 									<Header />
 									<div className="mobile">
 										<div className="sections-wrapper">
-										<section className='label-title px-3 py-5 p-md-4'><h3>#{params.id}</h3></section>
+										<section className='label-title px-3 py-3 p-md-4'><h3>#{params.id}</h3></section>
 											<section className="blog-list px-1 py-5">
 												<div className="container article-mobile-list">
 													<PostsList />
@@ -83,9 +83,6 @@ export default function MobileVersion(props){
 							</div>
 						</>
 					}
-				</Route>
-				<Route path='/error'>
-					<Error />
 				</Route>
 			</Router>);
 }
