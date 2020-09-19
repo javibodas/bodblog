@@ -44,7 +44,7 @@ export default function Post(props){
 					<div className="container">
 						<header className="blog-post-header">
 						    	<h2 className="title mb-2">{post.title}</h2>
-						    	<div className="meta mb-3"><span className="date">Publicado {post.publication_time}</span></div>
+						    	<div className="meta mb-3"><span className="date">Publicado {post.publicationTime}</span></div>
 								<div className="post-labels mb-3">
 									{post.labels.map((label) => <Label label={label} key={label}/>)}
 								</div>
