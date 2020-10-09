@@ -1,1 +1,1 @@
-export const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:8080' : 'https://api-bodblog.herokuapp.com';
+export const API_URL = window.location.hostname === 'localhost' ? process.env.REACT_APP_URI_LOCAL_SERVER : process.env.REACT_APP_URI_SERVER;
